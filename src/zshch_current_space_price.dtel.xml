@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZSHCH_CURRENT_SPACE_PRICE</ROLLNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DOMNAME>ZSHCH_SPACE_PRICE</DOMNAME>
+    <HEADLEN>55</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>20</SCRLEN2>
+    <SCRLEN3>40</SCRLEN3>
+    <DDTEXT>Current parking space purchase price</DDTEXT>
+    <REPTEXT>Current parking space price</REPTEXT>
+    <SCRTEXT_S>Space pric</SCRTEXT_S>
+    <SCRTEXT_M>Current space price</SCRTEXT_M>
+    <SCRTEXT_L>Current parking space price</SCRTEXT_L>
+    <DTELMASTER>E</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+   <I18N_LANGS>
+    <LANGU>R</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>R</DDLANGUAGE>
+     <DDTEXT>Текущая цена выкупа парковочного места</DDTEXT>
+     <REPTEXT>Текущая цена выкупа парковочного места</REPTEXT>
+     <SCRTEXT_S>Цена места</SCRTEXT_S>
+     <SCRTEXT_M>Текущая цена места</SCRTEXT_M>
+     <SCRTEXT_L>Текущая цена выкупа парковочного места</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

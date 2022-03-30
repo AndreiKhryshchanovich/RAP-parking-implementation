@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_NROB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <ATTRIBUTES>
+    <OBJECT>ZSHCH_CON</OBJECT>
+    <DOMLEN>ZSHCH_TYPICAL_ID</DOMLEN>
+    <PERCENTAGE>10.0</PERCENTAGE>
+    <NONRSWAP>X</NONRSWAP>
+   </ATTRIBUTES>
+   <TEXT>
+    <LANGU>E</LANGU>
+    <OBJECT>ZSHCH_CON</OBJECT>
+    <TXT>Number range for contact ID</TXT>
+    <TXTSHORT>No range for contact</TXTSHORT>
+   </TEXT>
+  </asx:values>
+ </asx:abap>
+</abapGit>
