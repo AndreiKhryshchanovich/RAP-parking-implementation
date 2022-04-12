@@ -1,0 +1,34 @@
+projection;
+use draft;
+
+define behavior for ZSHCH_C_RENTER alias Renter
+use etag
+{
+  use create;
+  use update;
+  use delete;
+  use action maximizeDiscount;
+  use action returnInitialDiscount;
+
+  use association _Order { create; with draft; }
+  use association _RenterTxt { create; with draft; }
+}
+
+define behavior for ZSHCH_C_RENTER_T alias RenterTxt
+use etag
+{
+  use update;
+  use delete;
+
+  use association _Renter { with draft; }
+}
+
+define behavior for ZSHCH_C_ORDER alias Order
+use etag
+{
+  use update;
+  use delete;
+  use action payRental;
+
+  use association _Renter { with draft; }
+}

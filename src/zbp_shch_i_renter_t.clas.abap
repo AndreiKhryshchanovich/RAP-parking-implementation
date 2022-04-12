@@ -1,0 +1,5 @@
+CLASS zbp_shch_i_renter_t DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zshch_i_renter.
+ENDCLASS.
+
+CLASS zbp_shch_i_renter_t IMPLEMENTATION.
+ENDCLASS.

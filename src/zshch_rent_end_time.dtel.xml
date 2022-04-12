@@ -5,7 +5,7 @@
    <DD04V>
     <ROLLNAME>ZSHCH_RENT_END_TIME</ROLLNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
-    <DOMNAME>TIMS</DOMNAME>
+    <DOMNAME>ZSHCH_TIME</DOMNAME>
     <HEADLEN>55</HEADLEN>
     <SCRLEN1>10</SCRLEN1>
     <SCRLEN2>20</SCRLEN2>
@@ -13,7 +13,7 @@
     <DDTEXT>Rent period ending (Time)</DDTEXT>
     <REPTEXT>Rent period ending (Time)</REPTEXT>
     <SCRTEXT_S>Till-Time</SCRTEXT_S>
-    <SCRTEXT_M>Rent ending (Time)</SCRTEXT_M>
+    <SCRTEXT_M>Till (Time)</SCRTEXT_M>
     <SCRTEXT_L>Rent period ending (Time)</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>

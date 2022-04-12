@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZSHCH_CM_PARKING</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Messages for Parking</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSHCH_CM_PARKING</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Space number &amp;1 is unabailable for rent</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSHCH_CM_PARKING</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Renter &amp;1 unknown</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSHCH_CM_PARKING</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Begin date &amp;1 must not be after end date &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSHCH_CM_PARKING</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Begin date &amp;1 must be on or after system date</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSHCH_CM_PARKING</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Payment status &amp;1 unknown</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSHCH_CM_PARKING</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Passport number is not specified</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSHCH_CM_PARKING</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Phone number is not specified</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSHCH_CM_PARKING</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Last name/ First name must be specified</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,98 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo:           { typeName:       'Renter',
+                            typeNamePlural: 'Renters',
+                            title: { label: 'Renter', 
+                                     value: 'FullName' } },
+    presentationVariant: [{ sortOrder:      [{ by: 'FullName',
+                                               direction: #ASC }],
+                            visualizations: [{ type: #AS_LINEITEM }] }]
+     }
+annotate view ZSHCH_C_RENTER with
+{
+  @UI.facet: [ { id:              'RenterHeaderPhoneNumber',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 position:        10,
+                 targetQualifier: 'PhoneNumber' },
+               { id:              'RenterHeaderRentNumber',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 position:        20,
+                 targetQualifier: 'RentNumber' },
+               { id:              'GeneralInfo',
+                 label:           'General Information',
+                 type:            #COLLECTION,
+                 position:        10 },
+               { id:              'GeneralGroup',
+                 label:           'General',
+                 purpose:         #STANDARD,
+                 type:            #FIELDGROUP_REFERENCE,
+                 parentId:        'GeneralInfo',
+                 position:        10,
+                 targetQualifier: 'GeneralGroup'},
+               { id:              'Contacts',
+                 label:           'Contacts',
+                 purpose:         #STANDARD,
+                 type:            #FIELDGROUP_REFERENCE,
+                 parentId:        'GeneralInfo',
+                 position:        20,
+                 targetQualifier: 'ContactsGroup' },
+               { id:              'Name',
+                 label:           'Name',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 position:        20,
+                 targetElement:   '_RenterTxt' },  
+               { id:              'Order',
+                 label:           'Orders',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 position:        30,
+                 targetElement:   '_Order' }
+              ]
+  @UI.hidden: true
+  RenterUuid;
+  @UI: { lineItem:       [{ position: 10 }],
+         fieldGroup:     [{ position: 10, qualifier: 'GeneralGroup' }],
+         selectionField: [{ position: 10 }] }
+  RenterId;
+  @UI.hidden: true
+  LastName;
+  @UI.hidden: true
+  FirstName;
+  @UI: { lineItem:       [{ position: 20, importance: #HIGH }],
+         selectionField: [{ position: 20 }] }
+  FullName;
+  @UI: { lineItem:       [{ position: 30, importance: #HIGH  }],
+         fieldGroup:     [{ position: 40, qualifier: 'GeneralGroup' }],
+         selectionField: [{ position: 30 }] }
+  Passport;
+  @UI: { lineItem:       [{ position: 40, importance: #HIGH  }],
+         fieldGroup:     [{ position: 10, qualifier: 'ContactsGroup' }],
+         selectionField: [{ position: 40 }],
+         dataPoint:       { qualifier: 'PhoneNumber', title: 'Phone number' } }
+  PhoneNumber;
+  @UI: { fieldGroup:     [{ position: 20, qualifier: 'ContactsGroup' }] }
+  Email;
+  @UI: { lineItem:       [{ position: 50, importance: #HIGH  }],
+         fieldGroup:     [{ position: 20, qualifier: 'GeneralGroup' }],
+         dataPoint:       { qualifier: 'RentNumber', title: 'Number of rents' } }
+  RentNumber;
+  @UI: { lineItem:       [{ position: 60, importance: #HIGH  },
+                          { type: #FOR_ACTION, dataAction: 'maximizeDiscount', label: 'Maximize Discount' },
+                          { type: #FOR_ACTION, dataAction: 'returnInitialDiscount', label: 'Return Initial Discount' } ],
+         identification: [{ type: #FOR_ACTION, dataAction: 'maximizeDiscount', label: 'Maximize Discount' },
+                          { type: #FOR_ACTION, dataAction: 'returnInitialDiscount', label: 'Return Initial Discount' }],
+         fieldGroup:     [{ position: 30, qualifier: 'GeneralGroup' }] }
+  Discount;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+
+}

@@ -13,7 +13,7 @@
     <DDTEXT>Parking space ID (number)</DDTEXT>
     <REPTEXT>Parking space ID (number)</REPTEXT>
     <SCRTEXT_S>Space ID</SCRTEXT_S>
-    <SCRTEXT_M>Parking space ID (#)</SCRTEXT_M>
+    <SCRTEXT_M>Parking space number</SCRTEXT_M>
     <SCRTEXT_L>Parking space ID (number)</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>

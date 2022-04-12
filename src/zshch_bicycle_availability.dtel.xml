@@ -12,9 +12,9 @@
     <SCRLEN3>40</SCRLEN3>
     <DDTEXT>Bicycle parking availability</DDTEXT>
     <REPTEXT>Bicycle parking availability</REPTEXT>
-    <SCRTEXT_S>Bicycle</SCRTEXT_S>
-    <SCRTEXT_M>Bicycle parking</SCRTEXT_M>
-    <SCRTEXT_L>Bicycle parking availability</SCRTEXT_L>
+    <SCRTEXT_S>Availab-ty</SCRTEXT_S>
+    <SCRTEXT_M>Bicycle avail-ty</SCRTEXT_M>
+    <SCRTEXT_L>Bicycle  availability</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
    </DD04V>

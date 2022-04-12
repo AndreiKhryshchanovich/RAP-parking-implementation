@@ -11,10 +11,10 @@
     <SCRLEN2>20</SCRLEN2>
     <SCRLEN3>40</SCRLEN3>
     <DDTEXT>Payment status</DDTEXT>
-    <REPTEXT>Payment status</REPTEXT>
-    <SCRTEXT_S>Payment</SCRTEXT_S>
-    <SCRTEXT_M>Payment status</SCRTEXT_M>
-    <SCRTEXT_L>Payment status</SCRTEXT_L>
+    <REPTEXT>Payment status (ID)</REPTEXT>
+    <SCRTEXT_S>Payment ID</SCRTEXT_S>
+    <SCRTEXT_M>Payment status (ID)</SCRTEXT_M>
+    <SCRTEXT_L>Payment status (ID)</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
    </DD04V>

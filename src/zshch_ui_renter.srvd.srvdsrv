@@ -1,0 +1,19 @@
+@EndUserText.label: 'Service definition for Renter (Parking)'
+define service ZSHCH_UI_RENTER {
+  expose ZSHCH_C_RENTER as Renter;
+  expose ZSHCH_C_RENTER_T as RenterTxt;
+  expose ZSHCH_C_ORDER as RentOrder;
+  expose ZSHCH_C_ORDER_ALP as RentOrderALP;
+  expose ZSHCH_I_SPACE as ParkingSpace;
+  expose ZSHCH_I_STYPE as SpaceType;
+  expose ZSHCH_I_PTYPE as ParkingType;
+  expose ZSHCH_I_PAY_STAT as PaymentStatus;
+  expose ZSHCH_I_OWNER as Owner;
+  expose ZSHCH_I_OWNER_T as OwnerTxt;
+  expose ZSHCH_I_CONTACT as Contact;
+  expose ZSHCH_SH_RENTER as RenterSH;
+  expose ZSHCH_SH_SPACE_EMPTY as EmptySpace;
+  expose ZSHCH_SH_PARK_NAME as ParkingName;
+  expose ZSHCH_SH_BICYCLE_AVAIL as BicycleAvailability;
+  expose I_Currency as Currency;
+}

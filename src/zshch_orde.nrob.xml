@@ -9,13 +9,14 @@
     <BUFFER>X</BUFFER>
     <NOIVBUFFER>00000010</NOIVBUFFER>
     <NONRSWAP>X</NONRSWAP>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
    </ATTRIBUTES>
    <TEXT>
-    <LANGU>E</LANGU>
     <OBJECT>ZSHCH_ORDE</OBJECT>
     <TXT>Number range for rent order ID</TXT>
-    <TXTSHORT>No range for order</TXTSHORT>
+    <TXTSHORT>Number range for...</TXTSHORT>
    </TEXT>
+   <ISOLANG>EN</ISOLANG>
   </asx:values>
  </asx:abap>
 </abapGit>

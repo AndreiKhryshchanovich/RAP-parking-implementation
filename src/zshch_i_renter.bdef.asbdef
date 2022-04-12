@@ -1,0 +1,136 @@
+managed;
+with draft;
+
+define behavior for ZSHCH_I_RENTER alias Renter
+implementation in class zbp_shch_i_renter unique
+persistent table zshch_d_renter_a
+draft table zshch_d_renter_d
+lock master total etag LastChangedAt
+etag master LastChangedAt
+{
+  create;
+  update;
+  delete;
+  association _Order { create; with draft; }
+  association _RenterTxt { create (features:instance); with draft; }
+
+  field ( numbering : managed, readonly ) RenterUuid;
+  field ( readonly ) RenterId, RentNumber;
+  field ( mandatory ) Passport, PhoneNumber;
+
+  action ( features : instance ) maximizeDiscount result [1] $self;
+  action ( features : instance ) returnInitialDiscount result [1] $self;
+
+  internal action increaseRentNumber;
+
+  validation validatePassport on save { create; field Passport; }
+  validation validatePhoneNumber on save { create; field PhoneNumber; }
+
+  determination calculateRenterId on save { create; }
+
+  draft determine action Prepare
+  {
+    validation validatePassport;
+    validation validatePhoneNumber;
+    validation RenterTxt ~ validateNames;
+    validation Order ~ validateSpaceAbailability;
+    validation Order ~ validateDates;
+    validation Order ~ validateStatus;
+  }
+
+  mapping for zshch_d_renter_a
+  {
+    RenterUuid = renter_uuid;
+    RenterId = renter_id;
+    Passport = passport;
+    PhoneNumber = phone_number;
+    Email = email;
+    RentNumber = rent_number;
+    Discount = discount;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+  }
+}
+
+define behavior for ZSHCH_I_RENTER_T alias RenterTxt
+implementation in class zbp_shch_i_renter_t unique
+persistent table zshch_d_renter_t
+draft table zshch_d_rent_t_d
+lock dependent by _Renter
+etag master LastChangedAt
+{
+  update;
+  delete;
+  association _Renter { with draft; }
+
+  field ( numbering : managed, readonly ) RenterTxtUuid;
+  field ( readonly ) RenterUuid, Langu;
+  field ( mandatory ) FirstName, LastName;
+
+  determination assignLangu on modify { field LastName; }
+
+  validation validateNames on save { create; field FirstName, LastName; }
+
+  mapping for zshch_d_renter_t
+  {
+    RenterTxtUuid = renter_txt_uuid;
+    Langu = langu;
+    RenterUuid = renter_uuid;
+    FirstName = first_name;
+    LastName = last_name;
+    LastChangedAt = last_changed_at;
+
+  }
+}
+
+define behavior for ZSHCH_I_ORDER alias Order
+implementation in class zbp_shch_i_order unique
+persistent table zshch_d_rorder_a
+draft table zshch_d_rorder_d
+lock dependent by _Renter
+etag master LastChangedAt
+{
+  update;
+  delete;
+  association _Renter { with draft; }
+
+  field ( numbering : managed, readonly ) RentOrderUuid;
+  field ( readonly ) RenterUuid, RenterId, RentOrderId, RentalTotal, RentalDiscount, RentalFinal, RentEndTime, CurrencyCode;
+  field ( readonly ) ParkingName, BicycleAvailability, OwnerName;
+  field ( mandatory ) SpaceId, PaymentStatus, RentBegDate, RentBegTime, RentEndDate;
+
+  action ( features : instance ) payRental result [1] $self;
+
+  validation validateSpaceAbailability on save { create; field SpaceId; }
+  validation validateDates on save { create; field RentBegDate, RentEndDate; }
+  validation validateStatus on save { create; field PaymentStatus; }
+
+  determination calculateRentOrderId on save { create; }
+  determination calculateRental on modify { field SpaceId, RentBegDate, RentEndDate; }
+  determination calculateRentEndTime on modify { field RentBegTime; }
+  determination refreshRelatedTables on save { create; }
+
+  mapping for zshch_d_rorder_a
+  {
+    RentOrderUuid = rent_order_uuid;
+    RentOrderId = rent_order_id;
+    RenterUuid = renter_uuid;
+    RenterId = renter_id;
+    SpaceId = space_id;
+    RentBegDate = rent_beg_date;
+    RentBegTime = rent_beg_time;
+    RentEndDate = rent_end_date;
+    RentEndTime = rent_end_time;
+    RentalTotal = rental_total;
+    RentalDiscount = rental_discount;
+    RentalFinal = rental_final;
+    PaymentStatus = payment_status;
+    CurrencyCode = currency_code;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+  }
+}

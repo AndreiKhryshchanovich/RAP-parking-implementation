@@ -4,6 +4,7 @@
   <asx:values>
    <DEVC>
     <CTEXT>DB elements for HW1</CTEXT>
+    <TPCLASS>X</TPCLASS>
    </DEVC>
   </asx:values>
  </asx:abap>

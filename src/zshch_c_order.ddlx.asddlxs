@@ -1,0 +1,144 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo:           { typeName:       'Order',
+                          typeNamePlural: 'Orders',
+                          title: { type:  #STANDARD, 
+                                   value: 'RentOrderId' } },
+  presentationVariant: [{ sortOrder:      [{ by:        'PaymentStatusTxt',
+                                             direction: #DESC }] }]            
+      }
+
+annotate view ZSHCH_C_ORDER with
+{
+  @UI.facet: [ { id:              'OrderHeaderRentalFinal',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 position:        10,
+                 targetQualifier: 'RentalFinal' },
+               { id:              'OrderHeaderStatus',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 position:        20,
+                 targetQualifier: 'Status' },
+               { id:              'OrderInfo',
+                 label:           'Order Information',
+                 type:            #COLLECTION,
+                 position:        10 },
+               { id:              'SpaceInfo',
+                 label:           'Park Space Information',
+                 type:            #COLLECTION,
+                 position:        20 },
+               { id:              'GeneralGroup',
+                 label:           'General',
+                 purpose:         #STANDARD,
+                 type:            #FIELDGROUP_REFERENCE,
+                 parentId:        'OrderInfo',
+                 position:        10,
+                 targetQualifier: 'GeneralGroup' },
+               { id:              'OrderDatesGroup',
+                 label:           'Order dates',
+                 purpose:         #STANDARD,
+                 type:            #FIELDGROUP_REFERENCE,
+                 parentId:        'OrderInfo',
+                 position:        20,
+                 targetQualifier: 'OrderDatesGroup' },
+               { id:              'OrderFinanceGroup',
+                 label:           'Order finances',
+                 purpose:         #STANDARD,
+                 type:            #FIELDGROUP_REFERENCE,
+                 parentId:        'OrderInfo',
+                 position:        30,
+                 targetQualifier: 'OrderFinanceGroup' },
+               { id:              'SpaceGroup',
+                 label:           'General',
+                 purpose:         #STANDARD,
+                 type:            #FIELDGROUP_REFERENCE,
+                 parentId:        'SpaceInfo',
+                 position:        10,
+                 targetQualifier: 'SpaceGroup' },
+               { id:              'OwnerGroup',
+                 label:           'Owner',
+                 purpose:         #STANDARD,
+                 type:            #FIELDGROUP_REFERENCE,
+                 parentId:        'SpaceInfo',
+                 position:        20,
+                 targetQualifier: 'OwnerGroup' }  
+             ]
+  @UI.hidden: true
+  RentOrderUuid;
+  @UI: { lineItem:       [{ position: 10 }],
+         fieldGroup:     [{ position: 10, qualifier: 'GeneralGroup' }] }
+  RentOrderId;
+  @UI: { lineItem:       [{ position: 20 }],
+         fieldGroup:     [{ position: 20, qualifier: 'GeneralGroup' }] }
+  SpaceId;
+  @UI.hidden: true
+  RenterId;
+  @UI.hidden: true
+  RenterUuid;
+  @UI: { lineItem:       [{ position: 30 }],
+         fieldGroup:     [{ position: 10, qualifier: 'OrderDatesGroup' }] }
+  RentBegDate;
+  @UI: { lineItem:       [{ position: 40 }],
+         fieldGroup:     [{ position: 20, qualifier: 'OrderDatesGroup' }] }
+  RentBegTime;
+  @UI: { lineItem:       [{ position: 50 }],
+         fieldGroup:     [{ position: 30, qualifier: 'OrderDatesGroup' }] }
+  RentEndDate;
+  @UI: { lineItem:       [{ position: 60 }],
+         fieldGroup:     [{ position: 40, qualifier: 'OrderDatesGroup' }] }
+  RentEndTime;
+  @UI: { lineItem:       [{ position: 70 }],
+         fieldGroup:     [{ position: 10, qualifier: 'OrderFinanceGroup' }] }
+  RentalTotal;
+  @UI: { lineItem:       [{ position: 80 }],
+         fieldGroup:     [{ position: 20, qualifier: 'OrderFinanceGroup' }] }
+  RentalDiscount;
+  @UI: { lineItem:       [{ position: 90 }],
+         fieldGroup:     [{ position: 30, qualifier: 'OrderFinanceGroup' }],
+         dataPoint:       { qualifier: 'RentalFinal', title: 'Amount to pay' } }
+  RentalFinal;
+  @UI: { fieldGroup:     [{ position: 40, qualifier: 'OrderFinanceGroup' }] }
+  CurrencyCode;
+  @UI: { lineItem:       [{ position: 100, criticality: 'PaymentStatusCriticality' },
+                          { type: #FOR_ACTION, dataAction: 'payRental', label: 'Pay Rental' }],
+         identification: [{ type: #FOR_ACTION, dataAction: 'payRental', label: 'Pay Rental' }],
+         textArrangement: #TEXT_ONLY,
+         fieldGroup:     [{ position: 30, qualifier: 'GeneralGroup', criticality: 'PaymentStatusCriticality' }],
+         dataPoint:       { qualifier: 'Status', title: 'Payment status', criticality: 'PaymentStatusCriticality' } }
+  PaymentStatus;
+  @UI.fieldGroup: [{ position: 10, qualifier: 'SpaceGroup' }]
+  SpaceIdRead;
+  @UI: { textArrangement: #TEXT_ONLY,
+         fieldGroup:     [{ position: 20, qualifier: 'SpaceGroup' }] }
+  ParkingName;
+  @UI.fieldGroup: [{ position: 30, qualifier: 'SpaceGroup' }]
+  Address;
+  @UI.fieldGroup: [{ position: 40, qualifier: 'SpaceGroup' }]
+  SpaceSize;
+  @UI: { textArrangement: #TEXT_ONLY,
+         fieldGroup:     [{ position: 50, qualifier: 'SpaceGroup' }] }
+  BicycleAvailability;
+  @UI.fieldGroup: [{ position: 60, qualifier: 'SpaceGroup' }]
+  RentalDay;
+  @UI.fieldGroup: [{ position: 10, qualifier: 'OwnerGroup' }]
+  OwnerName;
+  @UI.fieldGroup: [{ position: 20, qualifier: 'OwnerGroup' }]
+  Email;
+  @UI.fieldGroup: [{ position: 30, qualifier: 'OwnerGroup' }]
+  PhoneNumber;
+  @UI.hidden: true
+  PaymentStatusCriticality;
+  @UI.hidden: true
+  PaymentStatusTxt;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  
+
+}

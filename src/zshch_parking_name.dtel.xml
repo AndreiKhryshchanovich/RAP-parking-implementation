@@ -12,8 +12,8 @@
     <SCRLEN3>40</SCRLEN3>
     <DDTEXT>Parking type name</DDTEXT>
     <REPTEXT>Parking type name</REPTEXT>
-    <SCRTEXT_S>Park name</SCRTEXT_S>
-    <SCRTEXT_M>Parking name</SCRTEXT_M>
+    <SCRTEXT_S>Park type</SCRTEXT_S>
+    <SCRTEXT_M>Parking type</SCRTEXT_M>
     <SCRTEXT_L>Parking type name</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
